@@ -3,13 +3,12 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from ...tests.selenium import chrome_browser_instance
 
+#@pytest.mark.selenium
+#def test_create_new_admin_user(create_admin_user): #adds the new user to the admin table
+#    assert create_admin_user.__str__() == "admin" #by default __str__ should equal the username, we just created
 
 @pytest.mark.selenium
-def test_create_new_admin_user(create_admin_user): #adds the new user to the admin table
-    assert create_admin_user.__str__() == "admin" #by default __str__ should equal the username, we just created
-
-@pytest.mark.selenium
-def test_dashboard_admin_login(live_server, create_admin_user, chrome_browser_instance):
+def test_dashboard_admin_login(live_server, django_db_setup, chrome_browser_instance):
     #selenium requires a browser, so in order to test in browser it needs a browser
     browser = chrome_browser_instance
     browser.get(("%s%s" % (live_server.url, "/admin/login/")))
