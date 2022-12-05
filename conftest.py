@@ -5,4 +5,5 @@
 pytest_plugins = [
     "ecommerce.tests.selenium", #this is the path
     "ecommerce.tests.fixtures", #it includes the modules, just like url_pattern
+    "ecommerce.tests.factories",
 ]
