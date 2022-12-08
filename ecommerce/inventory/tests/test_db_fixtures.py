@@ -31,3 +31,12 @@ def test_inventory_db_category_insert_data(db, category_factory, slug, is_active
     print(result.name)
     assert result.slug == slug
     assert result.is_active == is_active
+
+
+@pytest.mark.dbfixture
+@pytest.mark.parametrize(
+    "id, name, slug, is_active",
+    [
+
+    ],
+)
