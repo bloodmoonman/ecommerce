@@ -62,7 +62,7 @@ def test_inventory_db_product_dbfixture(db, db_fixture_setup, id, web_id, name, 
     result_created_at = result.created_at.strftime("%Y-%m-%d %H:%M:%S") #formatting the data from the database so we can match up with the data above(parametrized)
     result_updated_at = result.updated_at.strftime("%Y-%m-%d %H:%M:%S") #done these because they won't match because of the representation of the date in database. so we need to match the 2021-09-04 22:14:18 this format
     assert result.web_id == web_id
-    assert result.name == name
+    assert result.name == name          #these will test all of the fields
     assert result.slug == slug
     assert result.description == description
     assert result.is_active == is_active
